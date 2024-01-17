@@ -4,4 +4,8 @@ class Hospital:
         self.list_of_patient = list_of_patient
 
     def get_status_name_by_patient_id(self, patient_id):
-        pass
+        patient_statuses = {
+            0: 'Тяжело болен',
+        }
+        status_patient = self.list_of_patient[patient_id - 1]
+        return patient_statuses.get(status_patient)
