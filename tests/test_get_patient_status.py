@@ -1,3 +1,5 @@
+from Hospital import Hospital
+
 
 def test_get_status_name_by_patient_id():
     entity = Hospital([1, 0, 1])
