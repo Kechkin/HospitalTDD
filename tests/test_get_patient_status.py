@@ -1,4 +1,5 @@
 from Hospital import Hospital
+import pytest
 
 
 def test_get_status_name_by_patient_id():
@@ -13,3 +14,8 @@ def test_get_all_statuses_name_by_patient_id():
     assert entity.get_status_name_by_patient_id(patient_id=3) == 'Слегка болен'
     assert entity.get_status_name_by_patient_id(patient_id=4) == 'Готов к выписке'
 
+
+def test_if_patient_id_is_not_on_the_list():
+    entity = Hospital([0, 1, 2])
+    with pytest.raises(IndexError):
+        entity.get_status_name_by_patient_id(patient_id=5)
