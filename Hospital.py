@@ -12,5 +12,5 @@ class Hospital:
             2: 'Слегка болен',
             3: 'Готов к выписке',
         }
-        status_patient = self.list_of_patient[patient_id - 1]
+        status_patient = self._list_of_patient[patient_id - 1]
         return patient_statuses.get(status_patient)
